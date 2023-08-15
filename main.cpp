@@ -1,6 +1,7 @@
 #include <iostream>
-#include <glad/glad.h>
 #include <SDL.h>
+#include "mesh.h"
+#include "loadShader.h"
 
 int main(int argc, char* argv[]){
 	SDL_Window* window = nullptr;
@@ -32,6 +33,10 @@ int main(int argc, char* argv[]){
 
 	gladLoadGLLoader(SDL_GL_GetProcAddress);
 
+	Mesh cube;
+
+	GLuint programID = LoadShaders("vertex.glsl", "fragment.glsl");
+
 	bool done = false;
 
 	while(!done) {
@@ -44,9 +49,14 @@ int main(int argc, char* argv[]){
 			}
 		}
 		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+		glUseProgram(programID);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		
+		cube.draw();	
+		
 		SDL_GL_SwapWindow(window);
 	}
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-    return 0;
+	return 0;
 }
