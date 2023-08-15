@@ -1,0 +1,1 @@
+clang++ -std=c++20 main.cpp ./glad/src/glad.c -o spinning_shapes -I/Library/Frameworks/SDL2.framework/Headers -I./glad/include -F/Library/Frameworks -framework SDL2
