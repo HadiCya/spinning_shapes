@@ -11,10 +11,19 @@ Mesh::Mesh() {
 		0.5f, -0.5f, 0.5f,
 		-0.5f, -0.5f, 0.5f,
 		0.5f, 0.5f, 0.5f,
-		-0.5f, 0.5f, 0.5f
+		-0.5f, 0.5f, 0.5f,
+		0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+		0.5f, 0.5f, -0.5f,
+		-0.5f, 0.5f, -0.5f
 	};
 
-	GLint triangles[] = {0, 2, 3, 0, 3, 1};
+	GLint triangles[] = {0, 2, 3, 0, 3, 1,
+                          2, 6, 7, 2, 7, 3,
+                          6, 4, 5, 6, 5, 7,
+                          4, 0, 1, 4, 1, 5,
+                          1, 3, 7, 1, 7, 5,
+                          4, 6, 2, 4, 2, 0};
 
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
