@@ -1,6 +1,6 @@
 # Make spinning 3D shapes in SDL2 and OpenGL
 
-Repository for 3D shapes in SDL2 and OpenGL blog post and video
+Repository for 3D shapes in SDL2 and OpenGL
 
 Guide/Explanation:
 https://hadicya.dev/part-1-make-spinning-3d-shapes-in-sdl2-and-opengl
